@@ -9,6 +9,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "schema": "src/schema.prisma"
+  },
   "dependencies": {
     "@prisma/client": "^5.9.1",
     "@vercel/postgres": "^0.7.2",
