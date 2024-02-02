@@ -7,7 +7,7 @@ export default async function Members() {
   return (
     <div>
         <h1>List of members</h1>
-        {users.map((user) => {
+        {users.map((user: any) => {
           return (
             <div key={user.id}>
               {user.username}
