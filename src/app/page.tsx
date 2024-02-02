@@ -1,9 +1,12 @@
-import Image from "next/image";
+"use client";
+
+import Header from "@/components/Header"
 
 export default function Home() {
+  const name = "Hampshire family tree"
   return (
-    <main>
-      hello world
-    </main>
+    <div>
+      Main page of app
+    </div>
   );
 }
