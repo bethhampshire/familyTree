@@ -9,7 +9,7 @@ export default async function Members() {
         <h1>List of members</h1>
         {users.map((user) => {
           return (
-            <div>
+            <div key={user.id}>
               {user.username}
             </div>
           )
