@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "prisma": {
-    "schema": "/schema.prisma"
+    "schema": "./schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^5.9.1",
