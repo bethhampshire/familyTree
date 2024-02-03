@@ -1,11 +1,10 @@
 "use client";
-
-import Header from "@/components/Header"
+import styles from "./home.module.css";
 
 export default function Home() {
   const name = "Hampshire family tree"
   return (
-    <div>
+    <div className={styles.container}>
       Main page of app
     </div>
   );

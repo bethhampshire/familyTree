@@ -18,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
+        <Header appName="Hampshire family tree"
+         homeHref="/"
+          membersHref="/members"
+          treeHref="/tree"/>
         <div>
         {children}
         </div>
