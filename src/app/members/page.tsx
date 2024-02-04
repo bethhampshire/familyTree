@@ -1,23 +1,21 @@
 import Link from "next/link";
-import { getUsers } from "../data/users";
+import { getPeople } from "../data/people";
+import Tile from "@/components/Tile";
+import styles from "./members.module.css";
 
 export default async function Members() {
-  const users = await getUsers();
-  console.log(users);
+  const people = await getPeople();
   return (
-    <div>
-        <h1>List of members</h1>
-        {users.map((user: any) => {
+    <div className={styles.container}>
+        {people.map((person: any) => {
           return (
-            <div key={user.id}>
-              {user.username}
+            <div key={person.id}>
+              <Link href={`/members/${person.id}`}>
+                <Tile firstName={person.name} surname={person.surname}/>
+              </Link>
             </div>
           )
         })}
-        <div>
-            <Link href="/members/1">Member 1</Link>
-            <Link href="/members/2">Member 2</Link>
-        </div>
     </div>
   );
 }

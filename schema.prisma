@@ -21,7 +21,7 @@ model User {
 model Person {
     id      Int     @id @default(autoincrement())
     name    String
-    surname String
-    birthAt DateTime
-    deathAt DateTime
+    surname String?
+    birthAt DateTime?
+    deathAt DateTime?
 }

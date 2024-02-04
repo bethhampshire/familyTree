@@ -1,4 +1,3 @@
-import "./members.css";
 
 export default function MembersLayout({
     children,
