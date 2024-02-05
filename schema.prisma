@@ -24,4 +24,6 @@ model Person {
     surname String?
     birthAt DateTime?
     deathAt DateTime?
+    middlename String?
+    nee     String?
 }

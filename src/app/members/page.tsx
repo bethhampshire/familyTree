@@ -10,9 +10,8 @@ export default async function Members() {
         {people.map((person: any) => {
           return (
             <div key={person.id}>
-              <Link href={`/members/${person.id}`}>
-                <Tile firstName={person.name} surname={person.surname}/>
-              </Link>
+
+              <Tile firstName={person.name} surname={person.surname} id={person.id}/>
             </div>
           )
         })}

@@ -10,9 +10,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 250, 237, 205;
-    --background-end-rgb: 250, 237, 205;
+    --foreground-rgb: 250, 237, 205;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 20, 20, 20;
   }
 }
 
@@ -24,6 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    height: 100vh;
 }
 
 @layer utilities {
