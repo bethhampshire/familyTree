@@ -26,4 +26,5 @@ model Person {
     deathAt DateTime?
     middlename String?
     nee     String?
+    isConfident Boolean @default(false)
 }

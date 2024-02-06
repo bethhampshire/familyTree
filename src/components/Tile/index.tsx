@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./tile.module.css";
 import Image from 'next/image';
 import EditButton from "../EditButton";
-import LockButton from "../LockButton";
+import LockButton from "../LockBUtton";
 
 export default function Tile(props: any) {
     return (
@@ -17,6 +17,7 @@ export default function Tile(props: any) {
         </div>
         <EditButton />
         <LockButton />
+        <p>{props.isLocked} </p>
     </div>
     )
 }
