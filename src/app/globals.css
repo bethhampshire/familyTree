@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
     height: fit-content;
+    min-height: 100vh;
 }
 
 @layer utilities {
