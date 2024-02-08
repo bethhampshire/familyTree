@@ -8,6 +8,9 @@ export default function MemberId() {
     return (
       <div>
         <h1>Members page for {params.id}</h1>
+        <form>
+          
+        </form>
         <Link href="/members">Back to members</Link>
       </div>
     );

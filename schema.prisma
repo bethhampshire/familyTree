@@ -20,7 +20,7 @@ model User {
 
 model Person {
     id      Int     @id @default(autoincrement())
-    name    String
+    firstName String
     surname String?
     birthAt DateTime?
     deathAt DateTime?

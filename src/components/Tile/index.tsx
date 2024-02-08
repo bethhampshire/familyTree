@@ -7,9 +7,6 @@ import { useState } from "react";
 
 export default function Tile(props: any) {
     const [edit, setEdit] = useState(false);
-    const onChange = () => {
-        setEdit(!edit)
-      };
 
     return (
     <div className= "{styles.container} shadow-md shadow-slate-800 rounded border-slate-700 border-2 hover:bg-slate-800">
