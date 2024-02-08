@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { FormEvent, ReactEventHandler, useState } from 'react';
 import { Person } from '@/types/types';
+import FormField from '@/components/FormField';
 
 const Create: React.FC = () => {
     const [person, setPerson] = useState<Person>({
@@ -18,24 +19,13 @@ const Create: React.FC = () => {
         console.log(person);
     }
 
-    function handleFormFieldChange(e: any) {
-        const field = e.target.id;
-        setPerson({
-            ...person,
-            [field]: e.target.value,
-            });
-            console.log(person);
-        }
-
     return (
       <div>
         <h1>Create a member</h1>
         <form onSubmit={submitForm}>
-            <input id="firstName"
-            onChange={handleFormFieldChange}
-            value={person?.firstName}>
-            </input>
-            <label htmlFor="firstName">Name</label>
+            <FormField object={person} setObject={setPerson} fieldName="firstName" fieldLabel="Name"/>
+            <FormField object={person} setObject={setPerson} fieldName="surname" fieldLabel="Surname"/>
+            <FormField object={person} setObject={setPerson} fieldName="nee" fieldLabel="Nee"/>
         </form>
 
         <Link href="/members">Back to members</Link>
