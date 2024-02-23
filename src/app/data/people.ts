@@ -9,7 +9,6 @@ type UserCreationResponse =
   | { ok: false; error: string };
 
 export async function getPeople() {
-  debugger;
   const people = await prisma.person.findMany({
   })
 
@@ -17,7 +16,6 @@ export async function getPeople() {
 }
 
 export async function createPerson(person: PersonUI): Promise<NextResponse<UserCreationResponse>> {
-  debugger;
   try {
     const dbPerson = await prisma.person.create({
       data: {

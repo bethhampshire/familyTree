@@ -18,7 +18,6 @@ const Create: React.FC = () => {
 
   const submitForm = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-    debugger;
     const body = JSON.parse(JSON.stringify(person));
     var res = await createPerson(body)
     .then(res => {
