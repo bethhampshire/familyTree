@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 import  prisma from "@/lib/prisma"
-import { Person } from '@prisma/client';
+import { Person } from '@/types/types';
 
 export async function getPeople() {
   const people = await prisma.person.findMany({
@@ -11,13 +11,18 @@ export async function getPeople() {
 }
 
 export async function createPerson(req: Person) {
-  const person = await prisma.person.create({
-    data: {
-      firstName: req.firstName,
-      surname: req.surname,
+  debugger;
+  try {
+    await prisma.person.create({
+      data: {
+        firstName: req.firstName,
+        surname: req.surname,
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
-    }
-  })
   return;
 }
 

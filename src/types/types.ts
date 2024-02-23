@@ -1,8 +1,8 @@
 import { LargeNumberLike } from "crypto"
 
 export type Person = {
-    id: number | undefined;
-    firstName: string | undefined, 
+    id: number;
+    firstName: string, 
     surname?: string | undefined,
     birthAt?: Date | undefined,
     deathAt?: Date | undefined,

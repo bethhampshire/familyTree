@@ -8,14 +8,12 @@ interface FormFieldProps {
 }
 
 export default function FormField(props: FormFieldProps) {
-
     function handleFormFieldChange(e: any) {
         const field = e.target.id;
         props.setObject({
             ...props.object,
             [field]: e.target.value,
             });
-            console.log(props.object);
         }
 
     return (

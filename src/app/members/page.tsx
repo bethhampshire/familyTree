@@ -12,7 +12,6 @@ export default async function Members() {
           return (
             <div key={person.id}>
               <Tile firstName={person.firstName} surname={person.surname} id={person.id} isLocked={person.isConfident}/>
-
             </div>
           )
         })}
