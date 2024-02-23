@@ -1,41 +1,50 @@
-import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
+"use server"
 import  prisma from "@/lib/prisma"
-import { Person } from '@/types/types';
+import { PersonUI } from "@/types/types";
+import { Person } from "@prisma/client";
+import { NextResponse } from "next/server";
+
+type UserCreationResponse =
+  | { ok: true; data: Person }
+  | { ok: false; error: string };
 
 export async function getPeople() {
+  debugger;
   const people = await prisma.person.findMany({
   })
 
   return people;
 }
 
-export async function createPerson(req: Person) {
+export async function createPerson(person: PersonUI): Promise<NextResponse<UserCreationResponse>> {
   debugger;
   try {
-    await prisma.person.create({
+    const dbPerson = await prisma.person.create({
       data: {
-        firstName: req.firstName,
-        surname: req.surname,
+        firstName: person.firstName,
+        surname: person.surname,
+        birthAt: person.birthAt,
+        deathAt: person.deathAt,
+        middlename: person.middlename,
+        nee: person.nee,
+        isConfident: false,
+
       }
     });
+
+    if (!dbPerson) {
+      return NextResponse.json({
+        ok: false,
+        error: "Error creating person"
+      });
+    }
+
+    return NextResponse.json({
+      ok: true,
+      data: dbPerson
+    })
+
   } catch (err) {
-    console.log(err);
+    throw err;
   }
-
-  return;
-}
-
-export async function updatePerson(req:Person, res:any) {
-  const personId = req.id;
-  const person = await prisma.person.update({
-    where: { id: personId },
-    data: { 
-      firstName: req.firstName,
-      surname: req.surname,
-      birthAt: req.birthAt,
-      deathAt: req.deathAt
-     },
-  });
-  res.json(person);
 }

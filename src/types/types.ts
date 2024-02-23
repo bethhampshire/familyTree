@@ -1,6 +1,6 @@
 import { LargeNumberLike } from "crypto"
 
-export type Person = {
+export type PersonUI = {
     id: number;
     firstName: string, 
     surname?: string | undefined,
